@@ -11,11 +11,45 @@ function getComputerChoice(){
     }
 }
 
-function playRound(userInput) {
-
+function playRound(playerSelection,computerSelection = getComputerChoice()) {
+    playerSelection = makeLowercase(playerSelection)
+    // This switch checks to see who wins and returns
+    // the message stating what happened
+    switch (true){
+        case playerSelection === computerSelection :
+            return "You tied! Try again"
+            break
+        case (playerSelection === "rock" && 
+        computerSelection === "scissors"):
+            return "You won! Rock beats Scissors!"
+            break
+        case (playerSelection === "rock" && 
+        computerSelection === "paper"):
+            return "You lost! Paper beats Rock!"
+            break
+        case (playerSelection === "paper" && 
+        computerSelection === "scissors"):
+            return "You lost! Scissors beats Paper!"
+            break
+        case (playerSelection === "paper" && 
+        computerSelection === "rock"):
+            return "You won! Paper beats Rock!"
+            break
+        case (playerSelection === "scissors" && 
+        computerSelection === "rock"):
+            return "You lost! Rock beats Scissors!"
+            break
+        case (playerSelection === "scissors" && 
+        computerSelection === "paper"):
+            return "You won! Scissors beats Paper!"
+            break
+        default:
+            return "Please enter either Rock, Paper, or Scissors"        
+    }
 }
 
 function makeLowercase(string) {
+    // This function just returns a string all lowercase
     return (typeof string === "string") ? 
     string.toLowerCase() : 
     "Please enter a stirng!"
