@@ -1,3 +1,39 @@
+function game() {
+    console.log("Let's play a game! Best of 5!")
+    let score = 0
+    let result
+    // This loop runs 5 times and keeps track of score
+    let i = 0
+    while ( i < 5 ){
+        result = playRound(prompt("Please enter Rock, Paper, or Scissors!"))
+        console.log (result)
+        score = score + scoreKeeper(result)
+        i = i + Math.abs(scoreKeeper(result))
+    }
+    // This *IF* outputs final game results
+    if ( score < 0 ) {
+        console.log("You lost in this game!")
+    } else if ( score > 0 ) {
+        console.log("You won in this game!")
+    } else {
+        console.log("Oops! Something went wrong...")
+    }
+}
+
+
+function scoreKeeper(result){
+    result = result.slice(4,5)
+    if ( result === "t") {
+        return 0
+    } else if ( result === "w") {
+        return 1
+    } else if ( result === "l") {
+        return -1
+    } else {
+        return 0
+    }
+}
+
 function getComputerChoice(){
     // This function returns a randomly selected
     // rock, paper, or scissors
