@@ -1,4 +1,6 @@
 function game() {
+    // This funciton plays the game
+    // It will need to be initialized in the console
     console.log("Let's play a game! Best of 5!")
     let score = 0
     let result
@@ -22,6 +24,7 @@ function game() {
 
 
 function scoreKeeper(result){
+    // Check what message and add or subtract accordingly
     result = result.slice(4,5)
     if ( result === "t") {
         return 0
