@@ -1,3 +1,13 @@
+// New game with UI
+
+
+
+
+
+
+
+// old game in console
+
 function game() {
     // This funciton plays the game
     // It will need to be initialized in the console
