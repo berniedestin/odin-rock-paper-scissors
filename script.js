@@ -111,7 +111,7 @@ function playRound(playerSelection,computerSelection = getComputerChoice()) {
             return "You won! Scissors beats Paper!"
             break
         default:
-            return //"Please enter either Rock, Paper, or Scissors"        
+            return "Please enter either Rock, Paper, or Scissors"        
     }
 }
 
