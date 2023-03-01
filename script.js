@@ -1,14 +1,23 @@
 // New game with UI
-// const btnRock = document.querySelector('.rock')
-// const btnPaper = document.querySelector('.paper')
-// const btnScissors = document.querySelector('.scissors')
 
+// computerResults is the last div and is for posting the results
+const computerResults = document.querySelector('.computer')
+
+// gets all three buttons
 const btns = document.querySelectorAll('button')
 
-btns.forEach( btn => btn.addEventListener('click', getButton))
+// Adds EventListener to each of the three buttons and 
+// runs letsPlay function when triggered
+btns.forEach( btn => btn.addEventListener('click', letsPlay))
 
-function getButton() {
-    console.log(this.classList)
+function letsPlay() {
+    // This function resets the .computer div output
+    // then set userInput to the class of the clicked button
+    // then runs the playRound function and posts the results
+    computerResults.textContent = ''
+    let userInput = this.classList.value
+    const results = playRound(userInput)
+    computerResults.textContent = results
 }
 
 
@@ -70,7 +79,7 @@ function getComputerChoice(){
 }
 
 function playRound(playerSelection,computerSelection = getComputerChoice()) {
-    playerSelection = makeLowercase(playerSelection)
+    //playerSelection = makeLowercase(playerSelection)
     // This switch checks to see who wins and returns
     // the message stating what happened
     switch (true){
@@ -102,7 +111,7 @@ function playRound(playerSelection,computerSelection = getComputerChoice()) {
             return "You won! Scissors beats Paper!"
             break
         default:
-            return "Please enter either Rock, Paper, or Scissors"        
+            return //"Please enter either Rock, Paper, or Scissors"        
     }
 }
 
