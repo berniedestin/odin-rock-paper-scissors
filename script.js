@@ -1,6 +1,15 @@
 // New game with UI
+// const btnRock = document.querySelector('.rock')
+// const btnPaper = document.querySelector('.paper')
+// const btnScissors = document.querySelector('.scissors')
 
+const btns = document.querySelectorAll('button')
 
+btns.forEach( btn => btn.addEventListener('click', getButton))
+
+function getButton() {
+    console.log(this.classList)
+}
 
 
 
